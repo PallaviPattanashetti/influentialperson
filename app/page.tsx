@@ -12,7 +12,7 @@ export default function Home() {
       </p>
 
       <div className="flex w-full items-center justify-center mt-8">
-        <div className="w-full max-w-293.25 min-h-106.5 bg-[#514242] flex flex-col md:flex-row items-center justify-start p-4 md:pl-4">
+        <div className="w-full max-w-293.25 min-h-106.5 bg-[#514242] flex flex-col md:flex-row items-center justify-start p-4 md:">
           <div className="flex flex-col md:flex-row items-center w-full">
             <div className="w-full max-w-119.5 aspect-478/437 bg-gray-400 relative">
               <Image

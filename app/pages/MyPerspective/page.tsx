@@ -7,7 +7,7 @@ const page = () => {
         My Perspective - Why Sadhguru?
       </h1>
       <p className="font-['JetBrains_Mono'] text-[18px] md:text-[24px] text-black text-center">
-        Bridging the gap between ancient yogic sciences and modern life.
+       Exploring the intersection of logic, life, and inner clarity.
       </p>
       <h3 className="font-['JetBrains_Mono'] font-bold text-[28px] md:text-[36px] text-red-600 text-center mt-10">
         1. The Logic of Spirituality

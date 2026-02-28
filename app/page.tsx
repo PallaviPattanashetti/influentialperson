@@ -3,7 +3,7 @@ import Sadhguru from "@/public/assets/Sadhguru.jpg"
 
 export default function Home() {
   return (
-    <div className="px-4 py-8">
+    <div>
       <h1 className="font-['Jersey_20'] text-[40px] md:text-[64px] text-red-600 text-center">
         The Visionary & The Mystic
       </h1>

@@ -10,6 +10,7 @@ const page = () => {
         alt="Sadhguru Jaggi Vasudev"
         title="My Perspective — Why Sadhguru?"
         subtitle="Exploring the intersection of logic, life, and inner clarity."
+        contain
       />
 
       <div className="max-w-[1310px] mx-auto px-4 md:px-8">

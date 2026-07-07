@@ -6,14 +6,38 @@ type PageHeroProps = {
   alt: string;
   title: string;
   subtitle?: string;
+  /** Show the whole image without cropping (good for portrait photos). */
+  contain?: boolean;
 };
 
-const PageHero = ({ image, alt, title, subtitle }: PageHeroProps) => {
+const PageHero = ({ image, alt, title, subtitle, contain }: PageHeroProps) => {
   return (
     <div className="relative w-full max-w-[1310px] mx-auto mt-8 px-4 md:px-8">
-      <div className="hero-frame anim-zoom-in relative h-[280px] md:h-[420px] w-full">
-        <Image src={image} alt={alt} fill sizes="(max-width: 1310px) 100vw, 1310px" className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10" />
+      <div
+        className={`hero-frame anim-zoom-in relative w-full ${
+          contain ? "h-[420px] md:h-[560px]" : "h-[280px] md:h-[420px]"
+        }`}
+      >
+        {contain && (
+          /* Blurred fill so the frame is never empty behind a contained image */
+          <Image
+            src={image}
+            alt=""
+            aria-hidden
+            fill
+            sizes="(max-width: 1310px) 100vw, 1310px"
+            className="object-cover blur-2xl scale-110 opacity-60"
+          />
+        )}
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes="(max-width: 1310px) 100vw, 1310px"
+          className={contain ? "object-contain" : "object-cover"}
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         <div className="absolute inset-0 flex flex-col items-center justify-end text-center p-6 md:p-12">
           <h1 className="anim-fade-up delay-2 font-['Jersey_20'] text-[38px] md:text-[64px] text-white leading-tight drop-shadow-lg">
             {title}
